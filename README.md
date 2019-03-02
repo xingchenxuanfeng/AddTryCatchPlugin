@@ -6,6 +6,7 @@ insert try catch code when gradle transform class
 usage
 用法
 
+```build.gradle
 add this code to build.gradle in app moudle
 在app moudle级别的build.gradle中插入如下代码即可
 
@@ -17,3 +18,4 @@ addTryCatch {
                  "com.addtrycatchplugin.TestCrash1": ["crashMethod1", "crashMethod2"]]
     exceptionHandler = ["com.addtrycatchplugin.ExceptionUtils": "uploadCatchedException"]
 }
+```
