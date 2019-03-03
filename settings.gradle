@@ -1,1 +1,3 @@
-include ':app', ':add_trycatch_plugin', 'buildSrc'
+rootProject.name = 'add-trycatch'
+
+include ':app', 'buildSrc'
