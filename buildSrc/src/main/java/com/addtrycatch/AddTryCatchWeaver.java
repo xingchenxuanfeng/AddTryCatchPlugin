@@ -12,13 +12,8 @@ import java.io.File;
  * @time 19-2-28.
  */
 class AddTryCatchWeaver extends BaseWeaver {
-    boolean buildInWindows = File.separator.equals("\\");
-
     @Override
     public boolean isWeavableClass(String fullQualifiedClassName) {
-        if (buildInWindows && fullQualifiedClassName.contains("\\")) {
-            fullQualifiedClassName = fullQualifiedClassName.substring(fullQualifiedClassName.indexOf("classes") + 8).replace("\\", ".");
-        }
         boolean match = Config.getInstance().extension.hookPoint.containsKey(fullQualifiedClassName.replace(".class", ""));
         if (match) {
             System.out.println("add try catch class :" + fullQualifiedClassName);

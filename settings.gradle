@@ -1,3 +1,1 @@
-rootProject.name = 'add-trycatch'
-
 include ':app', 'buildSrc'

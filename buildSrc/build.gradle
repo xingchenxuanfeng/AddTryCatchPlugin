@@ -2,20 +2,14 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compile gradleApi()
-    compile localGroovy()
-    compile 'com.android.tools.build:gradle:3.3.1'
-    implementation 'com.android.tools.build:gradle-api:3.3.1'
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.0.1'
+//    implementation 'com.android.tools.build:gradle-api:3.0.1'
 
-    implementation 'commons-io:commons-io:2.6'
-    implementation 'commons-codec:commons-codec:1.10'
-    //noinspection GradleDependency
-    implementation 'org.ow2.asm:asm:5.1'
-    //noinspection GradleDependency
-    implementation 'org.ow2.asm:asm-util:5.1'
-    //noinspection GradleDependency
-    implementation 'org.ow2.asm:asm-commons:5.1'
-    implementation 'com.quinn.hunter:hunter-transform:0.9.0'
+    implementation('com.quinn.hunter:hunter-transform:0.9.0') {
+        exclude group: 'com.android.tools.build'
+    }
 }
 repositories {
     google()
@@ -31,6 +25,4 @@ buildscript {
     }
 }
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.xc'
-version = '0.1-SNAPSHOT'
 
