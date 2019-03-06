@@ -37,7 +37,7 @@ apply plugin: 'add-trycatch'
 addTryCatch {
     hookPoint = ["com.addtrycatchplugin.TestCrash" : ["crashMethod1", "crashMethod2"],
                  "com.addtrycatchplugin.TestCrash1": ["crashMethod1", "crashMethod2"],
-                 "anotherClassToInsetTryCatch":      ["aMethodToInset", "aMethodToInset"]]
+                 "anotherClassToInsertTryCatch"    : ["firstMethodToInsert", "secondMethodToInsert"]]
     exceptionHandler = ["com.addtrycatchplugin.ExceptionUtils": "uploadCatchedException"]
 }
 ```
