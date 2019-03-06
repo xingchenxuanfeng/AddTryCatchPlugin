@@ -6,6 +6,8 @@ import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.ClassWriter;
 
 import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author xc
@@ -14,11 +16,16 @@ import java.io.File;
 class AddTryCatchWeaver extends BaseWeaver {
     @Override
     public boolean isWeavableClass(String fullQualifiedClassName) {
-        boolean match = Config.getInstance().extension.hookPoint.containsKey(fullQualifiedClassName.replace(".class", ""));
-        if (match) {
-            System.out.println("add try catch class :" + fullQualifiedClassName);
+        if (File.separator.equals("\\") & fullQualifiedClassName.contains("\\")) {//windows workaround
+            fullQualifiedClassName = fullQualifiedClassName.replace("\\", ".");
+            for (Map.Entry<String, List<String>> entry : Config.getInstance().extension.hookPoint.entrySet()) {
+                boolean contains = fullQualifiedClassName.contains(entry.getKey());
+                if (contains) return true;
+            }
+            return false;
         }
-        return match;
+
+        return Config.getInstance().extension.hookPoint.containsKey(fullQualifiedClassName.replace(".class", ""));
     }
 
     @Override

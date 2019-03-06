@@ -50,7 +50,7 @@ public class AddTryCatchAdviceAdapter extends AdviceAdapter {
         if (exceptionHandleClass != null && exceptionHandleMethod != null) {
             mv.visitVarInsn(ALOAD, 1);
             mv.visitMethodInsn(INVOKESTATIC, exceptionHandleClass,
-                    exceptionHandleMethod, "(Ljava/lang/Throwable;)V", false);
+                    exceptionHandleMethod, "(Ljava/lang/Exception;)V", false);
         }
         mv.visitLabel(l3);
     }

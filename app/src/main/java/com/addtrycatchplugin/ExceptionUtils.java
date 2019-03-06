@@ -8,10 +8,10 @@ import android.util.Log;
  */
 public class ExceptionUtils {
 
-    public static void uploadCatchedException(Throwable throwable) {
-        if (null == throwable) {
+    public static void uploadCatchedException(Exception exception) {
+        if (null == exception) {
             return;
         }
-        Log.e("ExceptionUtilsTAG", "uploadCatchedException", throwable);
+        Log.e("ExceptionUtilsTAG", "uploadCatchedException", exception);
     }
 }

@@ -9,6 +9,8 @@ public class Config {
 
     public AddTryCatchExtension extension;
 
+    public String variantName;
+
     public static Config getInstance() {
         return sInstance;
     }

@@ -24,6 +24,7 @@ class AddTryCatchClassAdapter extends ClassVisitor {
         mClassName = name.replace("/", ".");
         mMethodNames = Config.getInstance().extension.hookPoint.get(mClassName);
         super.visit(version, access, name, signature, superName, interfaces);
+        System.out.println("add try catch class :" + mClassName);
     }
 
     @Override
