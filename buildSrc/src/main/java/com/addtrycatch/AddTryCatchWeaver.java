@@ -16,15 +16,6 @@ import java.util.Map;
 class AddTryCatchWeaver extends BaseWeaver {
     @Override
     public boolean isWeavableClass(String fullQualifiedClassName) {
-        if (File.separator.equals("\\") & fullQualifiedClassName.contains("\\")) {//windows workaround
-            fullQualifiedClassName = fullQualifiedClassName.replace("\\", ".");
-            for (Map.Entry<String, List<String>> entry : Config.getInstance().extension.hookPoint.entrySet()) {
-                boolean contains = fullQualifiedClassName.contains(entry.getKey());
-                if (contains) return true;
-            }
-            return false;
-        }
-
         return Config.getInstance().extension.hookPoint.containsKey(fullQualifiedClassName.replace(".class", ""));
     }
 
