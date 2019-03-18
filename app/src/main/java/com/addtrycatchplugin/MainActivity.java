@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Log.e("MainActivity", "before");
-        TestCrash.crashMethod1();
+        TestCrash2.crashMethod1();
         Log.e("MainActivity", "after");
     }
 }

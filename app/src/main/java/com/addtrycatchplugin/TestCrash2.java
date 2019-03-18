@@ -1,6 +1,6 @@
 package com.addtrycatchplugin;
 
-public class TestCrash1 {
+class TestCrash2 {
     public static void crashMethod1() {
         int a = 1 / 0;
     }

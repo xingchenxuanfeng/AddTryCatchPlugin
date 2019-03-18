@@ -35,9 +35,20 @@ add this code to build.gradle in app moudle
 apply plugin: 'add-trycatch'
 
 addTryCatch {
-    hookPoint = ["com.addtrycatchplugin.TestCrash" : ["crashMethod1", "crashMethod2"],
-                 "com.addtrycatchplugin.TestCrash1": ["crashMethod1", "crashMethod2"],
-                 "anotherClassToInsertTryCatch"    : ["firstMethodToInsert", "secondMethodToInsert"]]
+    hookPoint = [
+            "com.addtrycatchplugin.TestCrash1": [
+                    "crashMethod1",
+                    "crashMethod2"
+            ],
+            "com.addtrycatchplugin.TestCrash2": [
+                    "crashMethod1",
+                    "crashMethod2"
+            ],
+            "anotherClassToInsertTryCatch"    : [
+                    "firstMethodToInsert",
+                    "secondMethodToInsert"
+            ]
+    ]
     exceptionHandler = ["com.addtrycatchplugin.ExceptionUtils": "uploadCatchedException"]
 }
 ```
