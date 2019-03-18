@@ -1,12 +1,16 @@
-apply plugin: 'java-library'
+apply plugin: 'java-gradle-plugin'
+
+gradlePlugin {
+    plugins {
+        addTryCatchPlugin {
+            id = 'add-trycatch'
+            implementationClass = 'com.addtrycatch.AddTryCatchPlugin'
+        }
+    }
+}
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation gradleApi()
-    implementation localGroovy()
     implementation 'com.android.tools.build:gradle:3.0.1'
-//    implementation 'com.android.tools.build:gradle-api:3.0.1'
-
     implementation('com.quinn.hunter:hunter-transform:0.9.2') {
         exclude group: 'com.android.tools.build'
     }
