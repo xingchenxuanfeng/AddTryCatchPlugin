@@ -23,7 +23,6 @@ class AddTryCatchTransform extends HunterTransform {
     @Override
     public void transform(TransformInvocation transformInvocation)
             throws TransformException, InterruptedException, IOException {
-        Config.getInstance().variantName = transformInvocation.getContext().getVariantName();
         super.transform(transformInvocation);
     }
 
