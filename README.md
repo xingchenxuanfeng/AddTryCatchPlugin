@@ -1,9 +1,13 @@
 # AddTryCatchPlugin
 
-
 insert try catch code when gradle transform class
 
 自动在字节码中增加try catch的gradle 插件
+
+## Wiki
+### [AddTryCatch gradle plugin 编译期给代码加try catch的插件](https://blog.csdn.net/xingchenxuanfeng/article/details/88884708)
+### [一步步实现AddTryCatch插件 —— Gradle Transform和ASM实践](https://blog.csdn.net/xingchenxuanfeng/article/details/88630840)
+
 
 usage
 
